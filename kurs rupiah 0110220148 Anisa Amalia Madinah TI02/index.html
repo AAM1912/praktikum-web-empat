@@ -1,0 +1,67 @@
+<html lang="id">
+<head>
+    <script>
+        function changes(){
+            let nilai = Number(document.getElementById("mata uang").value);
+            let pilihan = document.getElementById("valas").value;
+            let usd = Number("14960");
+            let sgd = Number("10807");
+            let myr = Number("3442");
+            let jpy = Number("1314");
+            let eur = Number("16645");
+            let sar = Number("3775");
+            if (isNaN(nilai)) {
+                alert('isi kalkulator dengan angka!');
+            }else{
+                if (pilihan == "USD"){
+                    hasil = nilai * usd;
+                    document.getElementById("hasil").innerHTML = hasil + "rupiah";
+                }
+                if (pilihan == "SGD"){
+                    hasil = nilai * sgd;
+                    document.getElementById("hasil").innerHTML = hasil + "rupiah";
+                }
+                if (pilihan == "Ringgit"){
+                    hasil = nilai * myr;
+                    document.getElementById("hasil").innerHTML = hasil + "rupiah";
+                }
+                if (pilihan == "Yen"){
+                    hasil = nilai * jpy;
+                    document.getElementById("hasil").innerHTML = hasil + "rupiah";
+                }
+                if (pilihan == "Euro"){
+                    hasil = nilai * eur;
+                    document.getElementById("hasil").innerHTML = hasil + "rupiah";
+                }
+                if (pilihan == "Riyal"){
+                    hasil = nilai * sar;
+                    document.getElementById("hasil").innerHTML = hasil + "rupiah";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="form kurs">
+        <fieldset>
+            <label>Masukan jumlah uang yang ingin ditukar :</label>
+            <input type="text" id="mata uang" value="" onchange="changes()">
+        </fieldset>
+        <fieldset>
+            <label>Valas :</label>
+            <select id="valas" onchange="changes()">
+                <option>--Pilih--</option>
+                <option value="USD" id="usd">Dollar US</option>
+                <option value="SGD" id="sgd">Dollar Singapore</option>
+                <option value="Ringgit" id="myr">Ringgit</option>
+                <option value="Yen" id="jpy">Yen</option>
+                <option value="Riyal" id="sar">Riyal</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <h4 id="hasil"></h4>
+        </fieldset>
+    </form>
+    
+</body>
+</html>
